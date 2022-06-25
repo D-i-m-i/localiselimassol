@@ -1,2 +1,2 @@
-class AnnualEventsController < ApplicationController
+class AnnualeventsController < ApplicationController
 end
