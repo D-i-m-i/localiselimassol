@@ -10,10 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_071855) do
+ActiveRecord::Schema.define(version: 2022_06_25_085635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "annual_events", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_annual_events_on_category_id"
+    t.index ["user_id"], name: "index_annual_events_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "foodie_places", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_foodie_places_on_category_id"
+    t.index ["user_id"], name: "index_foodie_places_on_user_id"
+  end
+
+  create_table "laptop_caves", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_laptop_caves_on_category_id"
+  end
+
+  create_table "local_experiences", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_local_experiences_on_category_id"
+    t.index ["user_id"], name: "index_local_experiences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +85,18 @@ ActiveRecord::Schema.define(version: 2022_06_25_071855) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "annual_events", "categories"
+  add_foreign_key "annual_events", "users"
+  add_foreign_key "foodie_places", "categories"
+  add_foreign_key "foodie_places", "users"
+  add_foreign_key "laptop_caves", "categories"
+  add_foreign_key "local_experiences", "categories"
+  add_foreign_key "local_experiences", "users"
 end
