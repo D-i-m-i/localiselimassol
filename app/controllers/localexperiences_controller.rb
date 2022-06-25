@@ -1,0 +1,2 @@
+class LocalExperiencesController < ApplicationController
+end
