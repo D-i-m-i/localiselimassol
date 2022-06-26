@@ -1,2 +1,0 @@
-class AnnualeventsController < ApplicationController
-end
