@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_25_085635) do
+ActiveRecord::Schema.define(version: 2022_06_26_005154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_085635) do
     t.index ["user_id"], name: "index_foodie_places_on_user_id"
   end
 
-  create_table "laptop_caves", force: :cascade do |t|
+  create_table "laptop_cafes", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "address"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_085635) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_laptop_caves_on_category_id"
+    t.index ["category_id"], name: "index_laptop_cafes_on_category_id"
   end
 
   create_table "local_experiences", force: :cascade do |t|
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_085635) do
   add_foreign_key "annual_events", "users"
   add_foreign_key "foodie_places", "categories"
   add_foreign_key "foodie_places", "users"
-  add_foreign_key "laptop_caves", "categories"
+  add_foreign_key "laptop_cafes", "categories"
   add_foreign_key "local_experiences", "categories"
   add_foreign_key "local_experiences", "users"
 end
