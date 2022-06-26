@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.homepage-banner {
+  width: 1440px;
+  height: 379px;
+  background-color: #199293;
+  margin-top: 10px;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-text {
+    font-size: 61px;
+    color: white;
+  }
+}
