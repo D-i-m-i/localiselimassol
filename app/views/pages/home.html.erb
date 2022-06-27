@@ -4,20 +4,21 @@
   </div>
 
   <div class="cards-categories">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("local_experiences.jpg")%>)">
-      Local Experiences
-    </div>
+    <%= link_to local_experiences_path, target: :_blank do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("local_experiences.jpg")%>)">
+        Local Experiences
+      </div>
+    <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("annual_events.jpg")%>)">
+        Annual Events
+      </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("annual_events.jpg")%>)">
-      Annual Events
-    </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("laptop_cafes.jpg")%>)">
+        Laptop friendly cafes
+      </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("laptop_cafes.jpg")%>)">
-      Laptop friendly cafes
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("foodie_places.jpg")%>)">
-      Foodie Places
-    </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("foodie_places.jpg")%>)">
+        Foodie Places
+      </div>
   </div>
 </div>
