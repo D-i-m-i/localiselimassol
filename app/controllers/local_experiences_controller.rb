@@ -3,4 +3,8 @@ class LocalExperiencesController < ApplicationController
   def index
     @localexperiences = LocalExperience.all
   end
+
+  def show
+    @localexperience = LocalExperience.find(params[:id])
+  end
 end

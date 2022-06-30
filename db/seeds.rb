@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+LocalExperience.destroy_all
+
+LocalExperience.create!(name: "Sunrise Swim", description: "This is the sunrise swim", address: "This is the address")
+
+puts "one local experience created"
